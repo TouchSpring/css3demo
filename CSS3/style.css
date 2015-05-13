@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/*:root选择器：根选择器*/
+:root {
+  width: 1024px;
+  height: 1024px;
+  margin: 20px auto;
+  /*background: deepskyblue;*/ }
+
+.border-radius {
+  /*实心上半圆*/
+  margin: 10px 10px;
+  height: 50px;
+  width: 100px;
+  background: #9da;
+  float: left;
+  border-radius: 50px 50px 0 0; }
+
+.border-radius1 {
+  margin: 10px 10px;
+  height: 100px;
+  width: 100px;
+  background: #9da;
+  float: left;
+  border-radius: 50px 50px 50px 50px; }
+
+/*外阴影*/
+.box-shadow1 {
+  margin: 10px 10px;
+  width: 100px;
+  height: 100px;
+  float: left;
+  box-shadow: 4px 2px 6px #333333; }
+
+/*内阴影*/
+.box-shadow2 {
+  margin: 10px 10px;
+  width: 100px;
+  height: 100px;
+  float: left;
+  box-shadow: 4px 2px 6px #333333 inset; }
+
+/*多个阴影*/
+.box-shadow3 {
+  margin: 10px 10px;
+  width: 100px;
+  height: 100px;
+  float: left;
+  box-shadow: 4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset; }
+
+.rgba {
+  margin: 10px 10px;
+  height: 100px;
+  width: 100px;
+  float: left;
+  background: black; }
+  .rgba p {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+/*渐变色彩*/
+.linear-gradient {
+  margin: 10px 10px;
+  height: 100px;
+  width: 100px;
+  float: left;
+  background-image: linear-gradient(to left, red, yellow); }
+
+.text-overflow {
+  margin: 10px 10px;
+  width: 200px;
+  clear: both;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ccc; }
+
+@font-face {
+  font-family: 'My Font';
+  src: url("AlexBrush-Regular.ttf"); }
+.font-face {
+  margin: 10px 10px;
+  clear: both;
+  width: 200px;
+  color: #566F89;
+  font-size: 58px;
+  font-family: "My Font"; }
+
+.text-shadow {
+  margin: 10px 10px;
+  width: 340px;
+  clear: both;
+  text-shadow: 1px 1px 0 red; }
+
+/*设置元素背景图片的起始位置*/
+.background-origin {
+  margin: 10px 10px;
+  clear: both;
+  width: 220px;
+  border: 20px dashed rgba(12, 255, 255, 0.5);
+  padding: 20px;
+  font-weight: bold;
+  background: url(http://static.mukewang.com/static/img/logo_index.png) no-repeat;
+  background-origin: content-box;
+  position: relative; }
+  .background-origin span {
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .background-origin .content {
+    height: 80px;
+    border: 1px solid #333; }
+
+/*用来将背景图片做适当的裁剪以适应实际需要*/
+.background-clip {
+  margin: 10px 10px;
+  clear: both;
+  width: 220px;
+  border: 20px dashed rgba(12, 255, 255, 0.5);
+  padding: 20px;
+  font-weight: bold;
+  background: url(http://static.mukewang.com/static/img/logo_index.png) no-repeat;
+  background-origin: border-box;
+  background-clip: padding-box;
+  position: relative; }
+  .background-clip span {
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .background-clip .content {
+    height: 80px;
+    border: 1px solid #333; }
+
+.background-size {
+  margin: 10px 10px;
+  background: url(http://static.mukewang.com/static/img/logo_index.png) no-repeat;
+  width: 300px;
+  height: 140px;
+  border: 1px solid #999;
+  background-size: auto; }
+
+/*.attribute-selector{
+  margin: 10px 10px;
+  clear: both;
+  a[class^=column]{
+    color: #33CC00;
+  }
+  a[href$=doc]{
+    font-style: italic;
+  }
+  a[title*=box]{
+    background-color: deepskyblue;
+  }
+}*/
+/*旋转*/
+.rotate {
+  width: 200px;
+  height: 200px;
+  border: 1px dotted red;
+  margin: 50px 100px; }
+  .rotate div {
+    width: 200px;
+    height: 200px;
+    background: orange;
+    /*目前几乎所有的浏览器对这个属性的渲染效率都很低，所以我们可以用下面的hack去提高渲染效率*/
+    -o-transform: rotate(40deg);
+    /* Opera浏览器 */
+    -webkit-transform: rotate(40deg);
+    /* Webkit内核浏览器 */
+    -moz-transform: rotate(40deg);
+    /* Firefox浏览器 */
+    transform: rotate(40deg); }
+
+/*扭曲*/
+.skew {
+  width: 300px;
+  height: 100px;
+  border: 1px dotted red;
+  margin: 50px 100px; }
+  .skew div {
+    width: 300px;
+    height: 100px;
+    background: orange;
+    -webkit-transform: skew(45deg, 6deg);
+    -moz-transform: skew(45deg, 6deg);
+    transform: skew(45deg, 6deg); }
+
+.scale {
+  width: 200px;
+  height: 200px;
+  border: 1px dashed red;
+  margin: 100px 100px; }
+  .scale div {
+    width: 200px;
+    height: 200px;
+    background: orange; }
+  .scale div:hover {
+    /*设置 div 元素的不透明级别，从 0.0 （完全透明）到 1.0（完全不透明）。*/
+    opacity: 0.5;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    transform: scale(1.5); }
+
+.translate {
+  width: 200px;
+  height: 200px;
+  border: 1px dotted red;
+  margin: 20px 100px; }
+  .translate div {
+    width: 200px;
+    height: 200px;
+    background: orange;
+    -webkit-transform: translate(50px, 10px);
+    -moz-transform: translate(50px, 10px);
+    transform: translate(50px, 10px); }
+
+.transition {
+  width: 400px;
+  height: 200px;
+  margin: 50px 100px;
+  border: 1px dotted red;
+  position: relative; }
+  .transition div {
+    padding: 15px 20px;
+    color: #fff;
+    position: absolute;
+    /*让元素居中*/
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: orange;
+    -webkit-transition: all .5s ease-in .2s;
+    transition: all 0.5s ease-in 0.2s; }
+  .transition div:hover {
+    background-color: red;
+    border-radius: 10px; }
+
+@keyframes changeColor {
+  from {
+    background: red; }
+  to {
+    background: green; } }
+@-webkit-keyframes changeColor {
+  from {
+    background: red; }
+  to {
+    background: green; } }
+.animation {
+  width: 200px;
+  height: 200px;
+  background: red;
+  text-align: center;
+  margin: 20px 100px;
+  line-height: 200px;
+  color: #fff; }
+  .animation:hover {
+    /*animation-name属性主要是用来调用 @keyframes 定义好的动画。*/
+    animation-name: changeColor;
+    -webkit-animation-name: changeColor;
+    /*animation-duration主要用来设置CSS3动画播放时间*/
+    animation-duration: 5s;
+    -webkit-animation-duration: 5s;
+    /*animation-timing-function属性主要用来设置动画播放方式*/
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+    animation-delay: .1s;
+    -webkit-animation-delay: .1s; }
+
+@keyframes move {
+  0% {
+    transform: translate(0); }
+  15% {
+    transform: translate(100px, 180px); }
+  30% {
+    transform: translate(150px, 0); }
+  45% {
+    transform: translate(250px, 180px); }
+  60% {
+    transform: translate(300px, 0); }
+  75% {
+    transform: translate(450px, 180px); }
+  100% {
+    transfrom: translate(480px, 0); } }
+@-webkit-keyframes move {
+  0% {
+    transform: translate(0); }
+  15% {
+    transform: translate(100px, 180px); }
+  30% {
+    transform: translate(150px, 0); }
+  45% {
+    transform: translate(250px, 180px); }
+  60% {
+    transform: translate(300px, 0); }
+  75% {
+    transform: translate(450px, 180px); }
+  100% {
+    transfrom: translate(480px, 0); } }
+.animation-iteration-count {
+  width: 500px;
+  height: 200px;
+  border: 1px solid red;
+  margin: 20px 100px; }
+  .animation-iteration-count span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: green;
+    border-radius: 100%;
+    -webkit-animation-name: move;
+    animation-name: move;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+
+/*# sourceMappingURL=style.css.map */
